@@ -4,7 +4,7 @@ colors = {
      "red": "\033[91m",
      "green": "\033[32m",
      "cyan": "\033[36m",
-     "base": "\033[0m"
+     "white": "\033[0m"
 }
 
 
@@ -18,7 +18,7 @@ def findWords(str2find):
 
      redC = colors['red']
      greenC = colors['green']
-     baseC = colors['base']
+     whiteC = colors['white']
      cyanC = colors['cyan']
 
      allFiles = getFullPath()
@@ -37,13 +37,13 @@ def findWords(str2find):
                     if str2find in line:
 
                          counter += 1
-                         filename = filename.replace(filename, f'{greenC}{filename}{baseC}')
+                         filename = filename.replace(filename, f'{greenC}{filename}{whiteC}')
                          prettified = line.replace(
-                              str2find, '%s%s%s' % (redC,str2find,baseC)
+                              str2find, '%s%s%s' % (redC,str2find,whiteC)
                          )
 
                          _2print = '- {} : {}'.format(filename, prettified)
                    
                          print(_2print)
-               print('{}-------------- TOTAL : {} --------------{}'.format(redC,counter,baseC))
-          print('{}-------------- FILE  : {} --------------\n\n{}'.format(cyanC,file,baseC))
+               print('{}-------------- TOTAL : {} --------------{}'.format(redC,counter,whiteC))
+          print('{}-------------- FILE  : {} --------------\n\n{}'.format(cyanC,file,whiteC))
